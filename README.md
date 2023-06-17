@@ -3,8 +3,9 @@
 
 | Resource          | Link                                                                                                                              |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------|
-| Crate version     | [![Crates.io](https://img.shields.io/crates/v/wkhtmlapp?color=warning&style=plastic)](https://crates.io/crates/cacheapp)    |
-| Documentation     | [Cargo docs](https://github.com/JoelTorresAr/cacheapp.git)                                                                  |
+| Crate version     | [![Crates.io](https://img.shields.io/crates/v/wkhtmlapp?color=warning&style=plastic)](https://crates.io/crates/cacheapp)          |
+| Documentation     | [![Documentation](https://docs.rs/cache_remember/badge.svg)](https://github.com/JoelTorresAr/cacheapp.git)                        |
+| LICENSE           | [![LICENSE](https://img.shields.io/crates/l/cacheapp?style=plastic)](./LICENSE)
 
 
 

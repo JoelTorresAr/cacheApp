@@ -1,14 +1,14 @@
 [package]
-name = "cache_remember"
+name = "cacheapp"
 edition = "2021"
 version = "0.1.3"
 authors = ["Torres Farro Denis Joel <djoel_torres@hotmail.com>"]
 description = "Cache inspired by Laravel's cache remember forever"
-keywords = ["cache", "remember_forever" , "remember", "forget", "flush"]
+keywords = ["cache", "memory" , "remember", "forget", "ultra fast"]
 license = "MIT"
 readme = "README.md"
-documentation = "https://github.com/JoelTorresAr/cache_remember.git"
-repository = "https://github.com/JoelTorresAr/cache_remember.git"
+documentation = "https://github.com/JoelTorresAr/cacheapp.git"
+repository = "https://github.com/JoelTorresAr/cacheapp.git"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

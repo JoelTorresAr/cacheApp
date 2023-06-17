@@ -1,14 +1,15 @@
-# CACHE REMEMBER: README.md
+# CACHE APP: README.md
+# CACHE APP IS A STABLE CACHE REMEMBER CRATE MIGRATION
 
 | Resource          | Link                                                                                                                              |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------|
-| Crate version     | [![Crates.io](https://img.shields.io/crates/v/wkhtmlapp?color=warning&style=plastic)](https://crates.io/crates/cache_remember)    |
-| Documentation     | [Cargo docs](https://github.com/JoelTorresAr/cache_remember.git)                                                                  |
+| Crate version     | [![Crates.io](https://img.shields.io/crates/v/wkhtmlapp?color=warning&style=plastic)](https://crates.io/crates/cacheapp)    |
+| Documentation     | [Cargo docs](https://github.com/JoelTorresAr/cacheapp.git)                                                                  |
 
 
 
 ## [0.1.0] - 2023-06-11
-Cache Remember is a simple caching library for rust that allows you to cache the result of a function call for a given amount of time.
+Cache App is a simple caching library for rust that allows you to cache the result of a function call for a given amount of time.
 Inspired in laravel's cache remember.
 
 The remember function uses an async function as one of its parameters, which function must return a value that has Deserialize implemented, 
@@ -24,7 +25,7 @@ Change Mutex to RwLock to allow multiple reads at the same time.
 ## EXAMPLE
 
 ```rust
-    use cache_remember::CacheRemember;
+    use cacheapp::Cache;
     use std::thread;
     use std::time::Duration;
     use serde::{Deserialize, Serialize};

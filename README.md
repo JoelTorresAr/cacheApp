@@ -8,8 +8,6 @@
 | LICENSE           | [![LICENSE](https://img.shields.io/crates/l/cacheapp?style=plastic)](./LICENSE)
 
 
-
-## [0.1.0] - 2023-06-11
 Cache App is a simple caching library for rust that allows you to cache the result of a function call for a given amount of time.
 Inspired in laravel's cache remember.
 
@@ -17,12 +15,16 @@ The remember function uses an async function as one of its parameters, which fun
 Serialize for serde. If it has a cached value, it returns the value without executing the function, otherwise it will execute the function 
 and store the result in cache for future queries.
 
-## [0.1.2] - 2023-06-11
-REMOVE INNECESARY ASYNC AND RETURN RESULT IN forget(), forget_all() and purge() functions.
+## [0.1.4] - 2024-08-25
+Add set_group and forget_group.
+For add items to group and delete all items into group
 
 ## [0.1.3] - 2023-06-11
 Changed Box dyn std::error::Error so that it now accepts functions that return any Error as long as it has the Display trait implemented.
 Change Mutex to RwLock to allow multiple reads at the same time.
+
+## [0.1.2] - 2023-06-11
+REMOVE INNECESARY ASYNC AND RETURN RESULT IN forget(), forget_all() and purge() functions.
 ## EXAMPLE
 
 ```rust
@@ -62,6 +64,12 @@ Change Mutex to RwLock to allow multiple reads at the same time.
             let fun = get_user();
             let result = cache.remember_forever("test_remember", fun).await.unwrap();
             println!("{:?}", result);
+
+            // set group
+            cache.set_group("test_remember", "new_group");
+
+            //forget group
+            cache.forget_group("new_group");
 
             //forget all cache
             cache.forget_all();

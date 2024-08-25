@@ -38,9 +38,7 @@ impl Cache {
         Ok(())
     }
 
-    pub fn set_group<T>(&self, key: &str, group: &str) -> CacheResult<()>
-    where
-        T: Clone + Serialize + for<'de> Deserialize<'de>,
+    pub fn set_group(&self, key: &str, group: &str) -> CacheResult<()>
     {
         let mut data = self.data.write();
         if let Some(cache) = data.get_mut(key) {

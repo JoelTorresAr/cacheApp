@@ -15,7 +15,7 @@ The remember function uses an async function as one of its parameters, which fun
 Serialize for serde. If it has a cached value, it returns the value without executing the function, otherwise it will execute the function 
 and store the result in cache for future queries.
 
-## [0.1.4] - 2024-08-25
+## [0.1.6] - 2024-08-25
 Add set_group and forget_group.
 For add items to group and delete all items into group
 

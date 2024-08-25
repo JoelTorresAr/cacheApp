@@ -77,7 +77,7 @@ impl Cache {
         let serialize = serde_json::to_string(&result)?;
         data.insert(
             key.to_string(),
-            (CacheValue::new(serialize, Some(hours), None)),
+            CacheValue::new(serialize, Some(hours), None),
         );
 
         Ok(result)

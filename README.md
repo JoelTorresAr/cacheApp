@@ -15,6 +15,9 @@ The remember function uses an async function as one of its parameters, which fun
 Serialize for serde. If it has a cached value, it returns the value without executing the function, otherwise it will execute the function 
 and store the result in cache for future queries.
 
+## [0.1.7] - 2024-08-25
+Add forget_filter and forget_group_filter
+
 ## [0.1.6] - 2024-08-25
 Add set_group and forget_group.
 For add items to group and delete all items into group
@@ -59,6 +62,7 @@ REMOVE INNECESARY ASYNC AND RETURN RESULT IN forget(), forget_all() and purge() 
 
             //forget the cache
             cache.forget("test_remember");
+            cache.forget_filter(|x| x.contains("test"));
 
             // remember forever
             let fun = get_user();
@@ -70,6 +74,7 @@ REMOVE INNECESARY ASYNC AND RETURN RESULT IN forget(), forget_all() and purge() 
 
             //forget group
             cache.forget_group("new_group");
+            cache.forget_group_filter(|x| x.contains("new"));
 
             //forget all cache
             cache.forget_all();

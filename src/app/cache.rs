@@ -38,8 +38,7 @@ impl Cache {
         Ok(())
     }
 
-    pub fn set_group(&self, key: &str, group: &str) -> CacheResult<()>
-    {
+    pub fn set_group(&self, key: &str, group: &str) -> CacheResult<()> {
         let mut data = self.data.write();
         if let Some(cache) = data.get_mut(key) {
             cache.group = Some(group.to_string());
@@ -110,12 +109,46 @@ impl Cache {
         data.remove(key);
     }
 
+    pub fn forget_filter<F>(&self, filter: F)
+    where
+        F: Fn(&str) -> bool,
+    {
+        let mut data = self.data.write();
+        let mut keys = Vec::new();
+        for key in data.keys() {
+            if filter(key) {
+                keys.push(key.clone());
+            }
+        }
+        for key in keys {
+            data.remove(&key);
+        }
+    }
+
     pub fn forget_group(&self, group: &str) {
         let mut data = self.data.write();
         let mut keys = Vec::new();
         for (key, cache) in data.iter() {
             if let Some(cache_group) = &cache.group {
                 if cache_group == group {
+                    keys.push(key.clone());
+                }
+            }
+        }
+        for key in keys {
+            data.remove(&key);
+        }
+    }
+
+    pub fn forget_group_filter<F>(&self, filter: F)
+    where
+        F: Fn(&str) -> bool,
+    {
+        let mut data = self.data.write();
+        let mut keys = Vec::new();
+        for (key, cache) in data.iter() {
+            if let Some(cache_group) = &cache.group {
+                if filter(cache_group) {
                     keys.push(key.clone());
                 }
             }

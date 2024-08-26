@@ -16,7 +16,7 @@ Serialize for serde. If it has a cached value, it returns the value without exec
 and store the result in cache for future queries.
 
 ## [0.1.7] - 2024-08-25
-Add forget_filter and forget_group_filter
+Add forget_filter and forget_group_filter, which allow you to delete items using a function such as a filter
 
 ## [0.1.6] - 2024-08-25
 Add set_group and forget_group.
